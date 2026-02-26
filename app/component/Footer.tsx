@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { FaGithubSquare, FaInstagram, FaLinkedin, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -16,29 +16,54 @@ export default function Footer() {
         >
           {/* Text */}
           <h3 className="text-[17px] text-white">
-            Copyright © 2023. All rights are reserved
+            Copyright © 2025. All rights are reserved
           </h3>
 
-          {/* Social Icons */}
-          <div className="flex gap-[20px]">
+          <div className=" flex gap-5 max-[900px]:justify-center">
             <a
-              aria-label="github"
+              href="https://github.com/SojitraJenil"
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/jeminkukadiya09"
-              className="text-white transition hover:opacity-80"
+              className="text-[#2d2e32] transition hover:text-black"
+              aria-label="GitHub"
             >
-              <FaGithubSquare size={45} />
+              <FaGithubSquare size={32} className='text-white' />
             </a>
 
             <a
-              aria-label="linkedin"
+              href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
               target="_blank"
               rel="noreferrer"
-              href="https://www.linkedin.com/in/jeminkukadiya/"
-              className="text-white transition hover:opacity-80"
+              className="text-[#0a66c2] transition hover:opacity-80"
+              aria-label="LinkedIn"
             >
-              <FaLinkedin size={45} />
+              <FaLinkedin size={32} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/jenilll_18?igsh=ZTUybTh6dXNrdGlo"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#e1306c] transition hover:opacity-80"
+            >
+              <FaInstagram size={32} />
+            </a>
+
+            <a
+              href="https://wa.me/919979968463"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#25D366] transition hover:opacity-80"
+            >
+              <FaWhatsapp size={32} />
+            </a>
+
+            <a
+              href="tel:+919979968463"
+              className="text-[#147efb] transition hover:opacity-80"
+              aria-label="Call"
+            >
+              <FaPhoneAlt size={25} className='pt-1' />
             </a>
           </div>
         </div>

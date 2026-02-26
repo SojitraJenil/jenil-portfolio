@@ -1,17 +1,34 @@
 'use client';
 
 import Image from 'next/image';
-import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
-
 import Waving from '../assets/waving.png';
-import Html from '@/app/assets/html.svg';
-import ReactIcon from '@/app/assets/react.svg';
-import Bootstrap from '@/app/assets/Bootstrap_logo.png';
-import Scss from '@/app/assets/scss.svg';
-import JavaScript from '@/app/assets/javascript.svg';
-import MaterialUi from '@/app/assets/mui.png';
-import Css from '@/app/assets/css.svg';
+import {
+    SiHtml5,
+    SiCss3,
+    SiJavascript,
+    SiReact,
+    SiMui,
+    SiSass,
+    SiBootstrap,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiTypescript,
+    SiAmazon,
+} from 'react-icons/si';
+import {
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
+    SiMysql,
+    SiGraphql,
+} from 'react-icons/si';
+import {
+    SiVercel,
+    SiFirebase,
+    SiDocker,
+} from 'react-icons/si';
 import Profile from '@/app/assets/jenil.jpg';
+import { FaGithubSquare, FaLinkedin, FaInstagram, FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export default function Hero() {
     return (
@@ -52,68 +69,117 @@ export default function Hero() {
                             {/* Social */}
                             <div className="my-10 flex gap-5 max-[900px]:justify-center">
                                 <a
-                                    href="https://github.com/jeminkukadiya09"
+                                    href="https://github.com/SojitraJenil"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="transition hover:text-[#702cf6]"
+                                    className="text-[#2d2e32] transition hover:text-black"
+                                    aria-label="GitHub"
                                 >
                                     <FaGithubSquare size={32} />
                                 </a>
+
                                 <a
-                                    href="https://www.linkedin.com/in/jeminkukadiya/"
+                                    href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="transition hover:text-[#702cf6]"
+                                    className="text-[#0a66c2] transition hover:opacity-80"
+                                    aria-label="LinkedIn"
                                 >
                                     <FaLinkedin size={32} />
+                                </a>
+
+                                <a
+                                    href="https://www.instagram.com/jenilll_18?igsh=ZTUybTh6dXNrdGlo"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-[#e1306c] transition hover:opacity-80"
+                                >
+                                    <FaInstagram size={32} />
+                                </a>
+
+                                <a
+                                    href="https://wa.me/919979968463"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-[#25D366] transition hover:opacity-80"
+                                >
+                                    <FaWhatsapp size={32} />
+                                </a>
+
+                                <a
+                                    href="tel:+919979968463"
+                                    className="text-[#147efb] transition hover:opacity-80"
+                                    aria-label="Call"
+                                >
+                                    <FaPhoneAlt size={25} className='pt-1' />
                                 </a>
                             </div>
                         </div>
 
                         {/* Image */}
 
-                        
-           <div
-  className="relative h-[22rem] w-[22rem] morph
+
+                        <div
+                            className="relative h-[22rem] w-[22rem] morph
   border-[3px] border-[#2d2e32]
   max-[600px]:h-[17rem] max-[600px]:w-[17rem]"
-  style={{
-    backgroundImage: `url(${Profile.src})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
-/>
+                            style={{
+                                backgroundImage: `url(${Profile.src})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                        />
                     </div>
 
                     {/* Skills */}
                     <div
                         className="absolute bottom-0 left-0 flex items-center text-[17px] text-[#767676]
-            max-[900px]:static max-[900px]:flex-col"
+  max-[900px]:static max-[900px]:mt-[25px] max-[900px]:flex-col"
                     >
                         <p
                             className="mr-[70px] border-r-2 border-[#2d2e3280] pr-5 font-semibold text-[#2d2e32]
-              max-[900px]:mr-0 max-[900px]:mb-12 max-[900px]:border-r-0
-              max-[900px]:border-b-2 max-[900px]:pb-4"
+    max-[900px]:mr-0 max-[900px]:mb-12 max-[900px]:border-r-0
+    max-[900px]:border-b-2 max-[900px]:pb-4"
                         >
                             Tech Stack
                         </p>
 
                         <ul className="flex flex-wrap gap-6 max-[900px]:justify-center">
                             {[
-                                Html,
-                                Css,
-                                JavaScript,
-                                ReactIcon,
-                                MaterialUi,
-                                Scss,
-                                Bootstrap,
-                            ].map((icon, i) => (
+                                { icon: SiHtml5, label: 'HTML5', color: 'text-orange-600' },
+                                { icon: SiCss3, label: 'CSS3', color: 'text-blue-600' },
+                                { icon: SiJavascript, label: 'JavaScript', color: 'text-yellow-400' },
+                                { icon: SiTypescript, label: 'TypeScript', color: 'text-blue-500' },
+                                { icon: SiReact, label: 'React', color: 'text-cyan-400' },
+                                { icon: SiNextdotjs, label: 'Next.js', color: 'text-black' },
+                                { icon: SiTailwindcss, label: 'Tailwind CSS', color: 'text-sky-400' },
+                                { icon: SiMui, label: 'Material UI', color: 'text-blue-700' },
+                                { icon: SiSass, label: 'SCSS', color: 'text-pink-500' },
+                                { icon: SiBootstrap, label: 'Bootstrap', color: 'text-purple-600' },
+
+                                // Backend & Full-Stack
+                                { icon: SiNodedotjs, label: 'Node.js', color: 'text-green-600' },
+                                { icon: SiExpress, label: 'Express.js', color: 'text-gray-700' },
+                                { icon: SiMongodb, label: 'MongoDB', color: 'text-green-700' },
+                                { icon: SiMysql, label: 'MySQL', color: 'text-blue-600' },
+                                { icon: SiAmazon, label: 'AWS', color: 'text-orange-500' },
+
+                                { icon: SiVercel, label: 'Vercel', color: 'text-black' },
+                                { icon: SiFirebase, label: 'Firebase', color: 'text-orange-500' },
+                                { icon: SiDocker, label: 'Docker', color: 'text-blue-500' },
+
+                            ].map(({ icon: Icon, label, color }, i) => (
                                 <li
                                     key={i}
-                                    className="flex h-[65px] w-[65px] cursor-pointer items-center justify-center
-                  rounded-full bg-white shadow-md"
+                                    title={label}
+                                    className="group flex h-[65px] w-[65px] cursor-pointer items-center justify-center
+      rounded-full bg-white shadow-md transition
+      hover:-translate-y-1 hover:shadow-lg"
                                 >
-                                    <Image src={icon} alt="tech" className="w-[34px]" />
+                                    <Icon
+                                        className={`text-[32px] ${color} transition
+        group-hover:scale-110`}
+                                    />
                                 </li>
                             ))}
                         </ul>

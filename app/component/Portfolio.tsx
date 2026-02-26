@@ -4,52 +4,45 @@ import Image from 'next/image';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
+import Fitnessscreen from '@/app/assets/Fitness_screen.png';
+import Ecommerce from '@/app/assets/E-commerce-screencapture.png';
+import RealTImechat from '@/app/assets/chat-app-screenshot.png';
 import DisneyImage from '@/app/assets/disney.png';
 import BuildImage from '@/app/assets/letsbuild.png';
 import Decrypton from '@/app/assets/decrypton.png';
 import GymApp from '@/app/assets/gymapp.png';
 
 const projects = [
-  {
-    title: 'EVERYDAY GYM',
-    image: GymApp,
-    desc:
-      'A gym website is a comprehensive resource for fitness information, different exercises with GIFs, and exercise-related YouTube videos.',
-    stack: ['React', 'Material UI'],
-    code: 'https://github.com/jeminkukadiya09/everyday_gym',
-    live: 'https://everydaygym.netlify.app/',
-    reverse: false,
-  },
-  {
-    title: 'Lets Build',
-    image: BuildImage,
-    desc:
-      'A scalable platform for contractors & self-workers to collaborate and build better products. Light, fast, and responsive.',
-    stack: ['React', 'SCSS'],
-    code: 'https://github.com/jeminkukadiya09/let-s-build/tree/jemin_dev',
-    live: 'https://buildwebapp.netlify.app/',
-    reverse: true,
-  },
-  {
-    title: 'Disney Clone',
-    image: DisneyImage,
-    desc:
-      'A Disney Hotstar clone that allows users to browse movies category-wise with Google Firebase authentication.',
-    stack: ['React', 'CSS'],
-    code: 'https://github.com/jeminkukadiya09/Disney-clone/tree/jemin_dev',
-    live: 'https://disneyplus-clone-cc688.web.app/home',
-    reverse: false,
-  },
-  {
-    title: 'Decryptor',
-    image: Decrypton,
-    desc:
-      'Decryptor is a crypto app that allows users to search real-time cryptocurrency data.',
-    stack: ['React', 'SCSS'],
-    code: 'https://github.com/jeminkukadiya09/Decrtptor/tree/jemin_dev',
-    live: 'https://decryptor-crypto.netlify.app/',
-    reverse: true,
-  },
+ {
+  title: 'Daily Expense Tracker',
+  image: Fitnessscreen,
+  desc:
+    'A full-stack expense tracking application that allows users to manage daily income and expenses with real-time calculations, category-wise analytics, and responsive charts.',
+  stack: ['Next.js', 'TypeScript', 'MongoDB', 'Tailwind CSS'],
+  code: 'https://github.com/SojitraJenil/daily-expense-user',
+  live: 'https://expense-daily.vercel.app/',
+  reverse: false,
+},
+{
+  title: 'E-Commerce Platform (User + Admin)',
+  image: Ecommerce,
+  desc:
+    'A complete full-stack e-commerce solution with a user storefront and an admin dashboard. Features include product management, authentication, order tracking, and role-based access control.',
+  stack: ['Next.js', 'React', 'Node.js', 'MongoDB'],
+  code: 'https://github.com/SojitraJenil/ECommerce-front-back',
+  live: 'https://e-com-jenil.vercel.app/',
+  reverse: true,
+},
+{
+  title: 'Real-Time Chat Application',
+  image: GymApp,
+  desc:
+    'A real-time chat application built with Socket.io enabling instant messaging, live updates, and seamless user interaction with a modern responsive UI.',
+  stack: ['Next.js', 'Socket.io', 'Node.js', 'MongoDB'],
+  code: 'https://github.com/SojitraJenil/chat-app-user',
+  live: 'https://chat-app-jenil.vercel.app',
+  reverse: false,
+},
 ];
 
 export default function Portfolio() {
