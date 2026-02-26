@@ -80,7 +80,6 @@ export default function Header() {
   animate-pulse hover:animate-none
   hover:scale-105 active:scale-95 transition-all"
 >
-  <span className="absolute -left-1 w-2 h-2 bg-white rounded-full animate-bounce" />
   <HiDownload size={16} />
   Resume
 </a>
