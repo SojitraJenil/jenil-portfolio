@@ -18,10 +18,10 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <ul className="hidden sm:flex items-center gap-8 font-semibold">
-            <li><Link href="/#home" className="hover:text-[#702cf6]">Home</Link></li>
-            <li><Link href="/#about" className="hover:text-[#702cf6]">About</Link></li>
-            <li><Link href="/#portfolio" className="hover:text-[#702cf6]">Project</Link></li>
-            <li><Link href="/#contact" className="hover:text-[#702cf6]">Contact</Link></li>
+            <li><Link href="/#home" className="text-[#2d2e32] hover:text-[#702cf6]">Home</Link></li>
+            <li><Link href="/#about" className="text-[#2d2e32] hover:text-[#702cf6]">About</Link></li>
+            <li><Link href="/#portfolio" className="text-[#2d2e32] hover:text-[#702cf6]">Project</Link></li>
+            <li><Link href="/#contact" className="text-[#2d2e32] hover:text-[#702cf6]">Contact</Link></li>
 
             {/* Resume Button */}
             <li>
