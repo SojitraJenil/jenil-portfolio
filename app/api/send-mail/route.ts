@@ -1,7 +1,10 @@
-"use client"
-
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+
+// This route runs on the server only. Nodemailer relies on Node.js built-in modules
+// like `net` and `tls`, so it must not be bundled for the client.
+// Files under `app/api` are server components by default, so we remove the
+// "use client" directive that was forcing the module into the client bundle.
 
 export async function POST(req: Request) {
   try {
