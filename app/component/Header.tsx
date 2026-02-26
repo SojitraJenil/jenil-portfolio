@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 z-[200] w-full bg-white shadow-md">
+      <nav className="fixed top-0 z-[200] w-full bg-white/100 dark:bg-white shadow-md isolate">
         <div className="flex items-center justify-between px-10 py-6 text-[17px]">
           <h3 className="text-[#2d2e32] font-semibold">Jenil Sojitra</h3>
 
@@ -72,16 +72,16 @@ export default function Header() {
 
           {/* Mobile Resume Button */}
           <li>
-          <a
-  href="/api/download-resume"
-  className="relative flex items-center gap-2 px-5 py-2 rounded-full 
+            <a
+              href="/api/download-resume"
+              className="relative flex items-center gap-2 px-5 py-2 rounded-full 
   bg-[#702cf6] text-white text-sm font-medium
   animate-pulse hover:animate-none
   hover:scale-105 active:scale-95 transition-all"
->
-  <HiDownload size={16} />
-  Resume
-</a>
+            >
+              <HiDownload size={16} />
+              Resume
+            </a>
           </li>
         </ul>
       </div>
