@@ -50,7 +50,7 @@ export default function Hero() {
                         {/* Text */}
                         <div className="relative flex max-w-[500px] flex-col">
                             <h1 className="my-8 text-[55px] font-bold leading-tight text-[#2d2e32] max-[600px]:text-[40px]">
-                                Front-End React Developer
+                                Front-End Developer
                             </h1>
 
                             <Image
@@ -62,7 +62,7 @@ export default function Hero() {
                             />
 
                             <p className="text-[18px] font-medium leading-relaxed text-[#767676]">
-                                Hi, I'm Jenil Sojitra. A passionate Front-end React Developer
+                                Hi, I'm Jenil Sojitra. A passionate Front-end Developer
                                 based in Surat, India. 📍
                             </p>
 
@@ -77,7 +77,7 @@ export default function Hero() {
                                 >
                                     <FaGithubSquare size={32} />
                                 </a>
-
+{/* 
                                 <a
                                     href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
                                     target="_blank"
@@ -95,7 +95,7 @@ export default function Hero() {
                                     className="text-[#e1306c] transition hover:opacity-80"
                                 >
                                     <FaInstagram size={32} />
-                                </a>
+                                </a> */}
 
                                 <a
                                     href="https://wa.me/919979968463"

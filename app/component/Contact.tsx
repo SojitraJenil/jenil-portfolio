@@ -133,7 +133,7 @@ export default function Contact() {
               >
                 <FaGithubSquare size={32} />
               </a>
-
+{/* 
               <a
                 href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
                 target="_blank"
@@ -152,7 +152,7 @@ export default function Contact() {
                 aria-label="Instagram"
               >
                 <FaInstagram size={32} />
-              </a>
+              </a> */}
 
               <a
                 href="https://wa.me/919979968463"

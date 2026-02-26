@@ -32,7 +32,7 @@ export default function Footer() {
               <FaGithubSquare size={32} className='text-white' />
             </a>
 
-            <a
+            {/* <a
               href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
               target="_blank"
               rel="noreferrer"
@@ -49,7 +49,7 @@ export default function Footer() {
               className="text-[#e1306c] transition hover:opacity-80"
             >
               <FaInstagram size={32} />
-            </a>
+            </a> */}
 
             <a
               href="https://wa.me/919979968463"
