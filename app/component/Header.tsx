@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { RiMenu3Line } from 'react-icons/ri';
 import { IoClose } from 'react-icons/io5';
+import { HiDownload } from 'react-icons/hi';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -16,11 +17,27 @@ export default function Header() {
           <h3 className="text-[#2d2e32] font-semibold">Jenil Sojitra</h3>
 
           {/* Desktop Menu */}
-          <ul className="hidden sm:flex gap-8 font-semibold">
+          <ul className="hidden sm:flex items-center gap-8 font-semibold">
             <li><Link href="/#home" className="hover:text-[#702cf6]">Home</Link></li>
             <li><Link href="/#about" className="hover:text-[#702cf6]">About</Link></li>
             <li><Link href="/#portfolio" className="hover:text-[#702cf6]">Project</Link></li>
             <li><Link href="/#contact" className="hover:text-[#702cf6]">Contact</Link></li>
+
+            {/* Resume Button */}
+            <li>
+              <a
+                href="/resume/Jenil_Sojitra_Resume.pdf"
+                download
+                className="relative flex items-center gap-2 px-5 py-2 rounded-full 
+                bg-[#702cf6] text-white text-sm font-medium
+                animate-pulse hover:animate-none
+                hover:scale-105 active:scale-95 transition-all"
+              >
+                <span className="absolute -left-1 w-2 h-2 bg-white rounded-full animate-bounce" />
+                <HiDownload size={16} />
+                Resume
+              </a>
+            </li>
           </ul>
 
           {/* Mobile Menu Icon */}
@@ -53,6 +70,21 @@ export default function Header() {
               </Link>
             </li>
           ))}
+
+          {/* Mobile Resume Button */}
+          <li>
+          <a
+  href="/api/download-resume"
+  className="relative flex items-center gap-2 px-5 py-2 rounded-full 
+  bg-[#702cf6] text-white text-sm font-medium
+  animate-pulse hover:animate-none
+  hover:scale-105 active:scale-95 transition-all"
+>
+  <span className="absolute -left-1 w-2 h-2 bg-white rounded-full animate-bounce" />
+  <HiDownload size={16} />
+  Resume
+</a>
+          </li>
         </ul>
       </div>
     </>
