@@ -3,6 +3,8 @@
 import { FaGithubSquare, FaInstagram, FaLinkedin, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
+
+  const getcurrentYear = new Date().getFullYear();
   return (
     <footer
       id="footer"
@@ -16,7 +18,7 @@ export default function Footer() {
         >
           {/* Text */}
           <h3 className="text-[17px] text-white">
-            Copyright © 2025. All rights are reserved
+            Copyright © {getcurrentYear}. All rights are reserved
           </h3>
 
           <div className=" flex gap-5 max-[900px]:justify-center">
