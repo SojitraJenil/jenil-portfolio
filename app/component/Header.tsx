@@ -34,7 +34,7 @@ export default function Header() {
                 hover:scale-105 active:scale-95 transition-all"
               >
                 <HiDownload size={16} />
-                Resume
+                Download Resume
               </a>
             </li>
           </ul>
@@ -80,7 +80,7 @@ export default function Header() {
   hover:scale-105 active:scale-95 transition-all"
             >
               <HiDownload size={16} />
-              Resume
+              Download Resume
             </a>
           </li>
         </ul>
