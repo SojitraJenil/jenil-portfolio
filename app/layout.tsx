@@ -16,22 +16,17 @@ export const metadata: Metadata = {
   title: "Jenil Sojitra - Software Engineer",
   description:
     "Welcome to my portfolio! I'm Jenil Sojitra, a passionate software engineer specializing in building scalable web applications.",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/icon.png",
-  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
         {children}
       </body>

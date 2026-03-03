@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Waving from '../assets/waving.png';
 import {
@@ -31,6 +32,53 @@ import Profile from '@/app/assets/jenil.jpg';
 import { FaGithubSquare, FaLinkedin, FaInstagram, FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export default function Hero() {
+    const [showInstagram, setShowInstagram] = useState(false);
+    const [showLinkedin, setShowLinkedin] = useState(false);
+    const [settingsLoaded, setSettingsLoaded] = useState(false);
+
+    useEffect(() => {
+        const fetchSettingsFromFirebase = async () => {
+            try {
+                const firebaseConfig = {
+                    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+                    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+                    databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+                    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+                } as any;
+
+                const firebaseAppModule: any = await import('firebase/app');
+                const databaseModule: any = await import('firebase/database');
+
+                if (!firebaseAppModule.getApps || !firebaseAppModule.getApps().length) {
+                    // initializeApp may be exported as initializeApp in older SDKs
+                    const init = firebaseAppModule.initializeApp || firebaseAppModule.default?.initializeApp;
+                    init(firebaseConfig);
+                }
+
+                const db = databaseModule.getDatabase(firebaseAppModule.getApp?.() || undefined);
+                const settingsRef = databaseModule.ref(db, 'settings');
+                const snap = await databaseModule.get(settingsRef);
+
+                if (snap && snap.exists && snap.exists()) {
+                    const data = snap.val();
+                    setShowInstagram(!!data.showInstagram);
+                    setShowLinkedin(!!data.showLinkedin);
+                } else {
+                    setShowInstagram(false);
+                    setShowLinkedin(false);
+                }
+            } catch (error) {
+                console.error('Failed to fetch settings from Firebase:', error);
+                setShowInstagram(false);
+                setShowLinkedin(false);
+            } finally {
+                setSettingsLoaded(true);
+            }
+        };
+
+        fetchSettingsFromFirebase();
+    }, []);
+
     return (
         <section
             id="home"
@@ -77,25 +125,34 @@ export default function Hero() {
                                 >
                                     <FaGithubSquare size={32} />
                                 </a>
-{/* 
-                                <a
-                                    href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-[#0a66c2] transition hover:opacity-80"
-                                    aria-label="LinkedIn"
-                                >
-                                    <FaLinkedin size={32} />
-                                </a>
 
-                                <a
-                                    href="https://www.instagram.com/jenilll_18?igsh=ZTUybTh6dXNrdGlo"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-[#e1306c] transition hover:opacity-80"
-                                >
-                                    <FaInstagram size={32} />
-                                </a> */}
+                                {settingsLoaded && (
+                                    <>
+                                        {showLinkedin && (
+                                            <a
+                                                href="https://www.linkedin.com/in/jenil-sojitra-0a18a2250"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-[#0a66c2] transition hover:opacity-80"
+                                                aria-label="LinkedIn"
+                                            >
+                                                <FaLinkedin size={32} />
+                                            </a>
+                                        )}
+
+                                        {showInstagram && (
+                                            <a
+                                                href="https://www.instagram.com/jenilll_18?igsh=ZTUybTh6dXNrdGlo"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-[#e1306c] transition hover:opacity-80"
+                                                aria-label="Instagram"
+                                            >
+                                                <FaInstagram size={32} />
+                                            </a>
+                                        )}
+                                    </>
+                                )}
 
                                 <a
                                     href="https://wa.me/919979968463"
