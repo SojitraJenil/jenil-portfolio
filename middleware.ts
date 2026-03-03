@@ -4,12 +4,11 @@ import type { NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const { pathname, origin } = request.nextUrl;
 
-  // ❗ VERY IMPORTANT: Skip these paths
+  // Skip static and api
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon.ico") ||
-    pathname.startsWith("/api") ||          // ✅ FIX
-    pathname.startsWith("/maintenance")
+    pathname.startsWith("/api")
   ) {
     return NextResponse.next();
   }
@@ -24,12 +23,19 @@ export async function middleware(request: NextRequest) {
     }
 
     const settings = await res.json();
-
     const isAdmin = pathname.startsWith("/admin");
 
-    if (settings?.siteDown && !isAdmin) {
+    // ✅ If site is down and not admin → redirect to maintenance
+    if (settings?.siteDown && !isAdmin && pathname !== "/maintenance") {
       return NextResponse.redirect(
         new URL("/maintenance", request.url)
+      );
+    }
+
+    // ✅ If site is NOT down but user is on maintenance page → redirect home
+    if (!settings?.siteDown && pathname === "/maintenance") {
+      return NextResponse.redirect(
+        new URL("/", request.url)
       );
     }
 
